@@ -1,0 +1,12 @@
+---
+description: Terraform guardrails—plan only, artifact-store contract, no data sources in sandbox
+globs: infra/**/*.tf
+alwaysApply: false
+---
+
+# Terraform (infra/)
+
+- Match `infra/modules/artifact-store` contract: inputs `name`, `site`, `retention_days`, `tags`; outputs `store_id`, `store_url`.
+- Run `fmt`, `validate`, `tflint`, `test`, and `plan -out=tfplan` only. **Never** `apply`, `destroy`, `import`, or state mutation.
+- Do not add `data` sources in `infra/envs/*` sandbox roots.
+- Finish with `infra/PLAN_SUMMARY.md` from `infra/scripts/plan_summary.py` for human review.

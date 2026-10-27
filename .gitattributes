@@ -1,0 +1,8 @@
+# Shell scripts must keep LF line endings on Windows or bash cannot run them.
+*.sh   text eol=lf
+*.py   text eol=lf
+*.json text eol=lf
+*.md   text eol=lf
+*.mdc  text eol=lf
+*.tf   text eol=lf
+*.hcl  text eol=lf

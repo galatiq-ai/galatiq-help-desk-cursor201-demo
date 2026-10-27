@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "hooks": {
+    "beforeShellExecution": [
+      {
+        "command": ".cursor/hooks/deny-tf-apply.sh",
+        "matcher": "terraform|tofu",
+        "failClosed": true
+      },
+      {
+        "command": "python3 .cursor/hooks/record-tf-use.py",
+        "matcher": "terraform|tofu"
+      }
+    ],
+    "stop": [
+      {
+        "command": "python3 .cursor/hooks/plan-gate-stop.py",
+        "loop_limit": 2
+      }
+    ]
+  }
+}
