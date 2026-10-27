@@ -8,5 +8,6 @@ alwaysApply: false
 
 - Match `infra/modules/artifact-store` contract: inputs `name`, `site`, `retention_days`, `tags`; outputs `store_id`, `store_url`.
 - Run `fmt`, `validate`, `tflint`, `test`, and `plan -out=tfplan` only. **Never** `apply`, `destroy`, `import`, or state mutation.
+- If `tflint` is not installed, say so and skip that step instead of trying to install it.
 - Do not add `data` sources in `infra/envs/*` sandbox roots.
 - Finish with `infra/PLAN_SUMMARY.md` from `infra/scripts/plan_summary.py` for human review.

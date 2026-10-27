@@ -85,6 +85,13 @@ terraform validate
 terraform plan -out=tfplan
 ```
 
+Optional: `tflint` (a Terraform linter the rule asks the agent to run). If it is missing, the agent should say so and skip it. Install only if you want it:
+
+- macOS: `brew install terraform-linters/tap/tflint` (plain `brew install tflint` no longer works)
+- Windows: `winget install -e --id TerraformLinters.tflint`
+- Linux and others: download the archive from the [TFLint releases page](https://github.com/terraform-linters/tflint/releases/latest)
+- Check: `tflint --version`
+
 Without Terraform installed, everything else still works, and the stop hook stays quiet. To run the extra Terraform tests: `RUN_TERRAFORM_TESTS=1 python3 -m pytest tests/test_terraform_offline.py`.
 
 ## Known limits

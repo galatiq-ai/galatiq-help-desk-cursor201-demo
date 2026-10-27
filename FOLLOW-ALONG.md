@@ -52,6 +52,7 @@ A short intro, then about forty-five minutes live in Cursor, then your questions
 - [ ] Start the desk viewer and leave it running: `python3 scripts/desk.py`, then open `http://127.0.0.1:8201`. You see the untriaged queue (70 tickets). The page is read-only and refreshes every 5 seconds, so you can watch changes appear. Port busy? `python3 scripts/desk.py --port 8202`.
 - [ ] In Cursor, open the `galatiq-help-desk-cursor201-demo` folder (the one that contains `README.md`).
 - [ ] **Optional, only for the Terraform extra in beat 4:** install Terraform 1.6+ (or OpenTofu), then `terraform -chdir=infra/envs/aws init -input=false` once while you have internet. Skip it if your network blocks the download; nothing else depends on it.
+- [ ] **Optional, only for the Terraform extra in beat 4:** `tflint`, a Terraform linter that the repo's rule asks the agent to run. macOS: `brew install terraform-linters/tap/tflint` (plain `brew install tflint` no longer works). Windows: `winget install -e --id TerraformLinters.tflint`. Linux and others: download the archive from the [TFLint releases page](https://github.com/terraform-linters/tflint/releases/latest). Check it with `tflint --version`. It is fine to skip: the agent should say it skipped `tflint`, then carry on with `fmt`, `validate` and `plan`.
 
 > **No viewer? You can still follow along**
 >
@@ -190,7 +191,7 @@ Run terraform -chdir=infra/envs/aws apply -auto-approve
 > The deny hook is a **regex on the command text**. It is a guardrail, not a security boundary. It can over-block (it also denies `rg "terraform apply" runbooks`) and a determined person can get around it. Real enforcement is cloud permissions and human review.
 >
 
-**Optional extra, needs Terraform:** let the agent do the whole ticket #41044 up to a plan, then stop.
+**Optional extra, needs Terraform:** let the agent do the whole ticket #41044 up to a plan, then stop. `tflint` is optional too (install steps are in the setup checklist). Without it the agent should say it skipped that step and keep going.
 
 **Prompt 4C · optional** (AGENT mode)
 

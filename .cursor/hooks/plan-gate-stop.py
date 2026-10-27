@@ -103,7 +103,8 @@ def main() -> None:
             {
                 "followup_message": (
                     "Before you finish: in infra/, run terraform fmt -check, validate, "
-                    "tflint and plan -out=tfplan for the env you changed (envs/aws), "
+                    "tflint (skip it and say so if it is not installed) and plan -out=tfplan "
+                    "for the env you changed (envs/aws), "
                     "then write infra/PLAN_SUMMARY.md using "
                     "infra/scripts/plan_summary.py. Do not apply."
                 )
