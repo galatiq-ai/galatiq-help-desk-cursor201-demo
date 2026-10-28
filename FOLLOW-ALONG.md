@@ -223,4 +223,12 @@ Implement ticket 41044 (docs/tickets/41044-terraform-edi-archive.md) in infra/en
 | Different results from the presenter | Normal: models and wording differ. Different facts are worth a second look. |
 | GitHub blocked | Use the zip the presenter shares; unzip and open the folder. |
 
+## Tell us how it went
+
+Please take two minutes to fill in the short survey after the session. Scan the code with your phone, or open the link.
+
+[https://forms.gle/wkrMgMhizm3kKjfx6](https://forms.gle/wkrMgMhizm3kKjfx6)
+
+![Survey QR code](docs/survey-qr.png)
+
 Repo: [https://github.com/galatiq-ai/galatiq-help-desk-cursor201-demo](https://github.com/galatiq-ai/galatiq-help-desk-cursor201-demo)
