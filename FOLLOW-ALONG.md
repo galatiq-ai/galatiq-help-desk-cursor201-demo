@@ -6,6 +6,8 @@
 
 A short intro, then about forty-five minutes live in Cursor, then your questions. We work one help desk queue for a fictional electronics distributor, **Brazos Ridge Electronics**, through four beats: a plain prompt, the same prompt with the company wiki attached, a reusable skill, and a safety hook. Everything (people, customers, tickets, wiki) is made-up sample data and runs on your own computer: no cloud account, no keys, no real help desk. **Watching is the default.** Follow along if you like; nobody needs to keep up. **Theme: the agent drafts; a human decides.**
 
+Keep the one-page **Core Concepts** reference beside you: it is the second attachment in the same email, and it is in the repo at `docs/CURSOR-201-CORE-CONCEPTS.pdf`.
+
 > ## ⚠️ ON WINDOWS? Read this before beat 4
 >
 > The safety hooks in `.cursor/hooks.json` call **`bash`** and **`python3`**, and those often do not exist on a Windows machine. Beat 4 has a short **optional** exercise: you ask Cursor to rewrite the hook in Python so it works on your machine, and a test (`python -m pytest tests/test_deny_hook.py`) tells you whether it still blocks what it should.
@@ -48,7 +50,7 @@ A short intro, then about forty-five minutes live in Cursor, then your questions
   python3 -m pytest
   ```
 
-  Expected: all pass, a few skip (the Terraform ones). Windows: `python -m pytest`. On Windows the deny hook tests may fail until the beat 4 exercise; that is expected.
+  Expected: about 50 pass and 2 skip (the Terraform ones). Windows: `python -m pytest`. On Windows the deny hook tests may fail until the beat 4 exercise; that is expected.
 - [ ] Start the desk viewer and leave it running: `python3 scripts/desk.py`, then open `http://127.0.0.1:8201`. You see the untriaged queue (70 tickets). The page is read-only and refreshes every 5 seconds, so you can watch changes appear. Port busy? `python3 scripts/desk.py --port 8202`.
 - [ ] In Cursor, open the `galatiq-help-desk-cursor201-demo` folder (the one that contains `README.md`).
 - [ ] **Optional, only for the Terraform extra in beat 4:** install Terraform 1.6+ (or OpenTofu), then `terraform -chdir=infra/envs/aws init -input=false` once while you have internet. Skip it if your network blocks the download; nothing else depends on it.
