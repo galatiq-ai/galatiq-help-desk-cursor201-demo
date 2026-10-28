@@ -16,7 +16,7 @@ Also: use `python` (or `py`) wherever this repo says `python3`.
 
 </td></tr></table>
 
-## Before the session (5 minutes)
+## Before the session (about 10 minutes)
 
 You need: [Cursor](https://cursor.com), Git, **Python 3.10 or newer**. Terraform is optional (see below). No Zammad, no cloud account, no API keys.
 
